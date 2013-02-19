@@ -20,5 +20,8 @@ class WatchPlugin(Plugin):
         watchcmd = 'clear && ' + ' '.join(argv)
         call_args = ['watchmedo', 'shell-command', '-c',
             watchcmd, '-R', '-p', '*.py', '.']
-        self.call(call_args)
+        try:
+            self.call(call_args)
+        except KeyboardInterrupt:
+            self.sys.stdout.write('\nStopped\n')
 
