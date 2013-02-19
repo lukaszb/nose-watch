@@ -3,7 +3,7 @@ A nose plugin that re-runs test suite on filesystem event.
 """
 
 
-VERSION = (0, 9, 0)
+VERSION = (0, 9, 1, 'dev')
 
 __version__ = '.'.join((str(each) for each in VERSION[:4]))
 
