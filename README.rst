@@ -35,6 +35,14 @@ Development
 We use tox_ for tests. Repository is at https://github.com/lukaszb/nose-watch/.
 We prefer pull requests for sending patches.
 
+To test the package you can simply run::
+
+    nosetests
+
+.. note:: Please do not use the plugin itself (--with-watch) to test the plugin
+   as it would be picked by nose before the one from repository. If you want to
+   watch for changes please use provided ``watch-tests.sh`` script.
+
 .. _watchdog: http://pypi.python.org/pypi/watchdog
 .. _tox: http://pypi.python.org/pypi/tox
 
