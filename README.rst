@@ -2,6 +2,9 @@
 nose-watch
 ==========
 
+.. image:: https://secure.travis-ci.org/lukaszb/nose-watch.png?branch=master
+  :target: http://travis-ci.org/lukaszb/nose-watch
+
 A Nose plugin that allows to run tests continuously (uses watchdog_ for
 listening to filesystem events).
 
