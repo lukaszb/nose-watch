@@ -5,7 +5,7 @@ from subprocess import Popen
 
 class WatchPlugin(Plugin):
     """
-    Plugin that use watchdog for continuos tests run.
+    Plugin that use watchdog for continuous tests run.
     """
     name = 'watch'
     is_watching = False
