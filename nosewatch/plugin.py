@@ -16,7 +16,10 @@ class WatchPlugin(Plugin):
 
     def finalize(self, result):
         argv = list(self.sys.argv)
-        argv.remove('--with-watch')
+        try:
+            argv.remove('--with-watch')
+        except ValueError:
+            pass
         watchcmd = 'clear && ' + ' '.join(argv)
         call_args = ['watchmedo', 'shell-command', '-c',
             watchcmd, '-R', '-p', '*.py', '-W', '.']
@@ -24,4 +27,3 @@ class WatchPlugin(Plugin):
             self.call(call_args)
         except KeyboardInterrupt:
             self.sys.stdout.write('\nStopped\n')
-
