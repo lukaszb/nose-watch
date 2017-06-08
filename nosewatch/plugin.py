@@ -9,13 +9,19 @@ class WatchPlugin(Plugin):
     """
     name = 'watch'
     is_watching = False
-    sys = sys
+    argv = []
+    stdout = None
+
+    def __init__(self, *args, **kwargs):
+        self.argv = sys.argv
+        self.stdout = sys.stdout
+        super(WatchPlugin, self).__init__(*args, **kwargs)
 
     def call(self, args):
         Popen(args).wait()
 
     def finalize(self, result):
-        argv = list(self.sys.argv)
+        argv = list(self.argv)
         try:
             argv.remove('--with-watch')
         except ValueError:
@@ -26,4 +32,4 @@ class WatchPlugin(Plugin):
         try:
             self.call(call_args)
         except KeyboardInterrupt:
-            self.sys.stdout.write('\nStopped\n')
+            self.stdout.write('\nStopped\n')
