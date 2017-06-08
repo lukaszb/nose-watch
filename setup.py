@@ -7,7 +7,7 @@ setup(
     version=nosewatch.get_version(),
     author='Lukasz Balcerzak',
     author_email='lukaszbalcerzak@gmail.com',
-    description=nosewatch.__doc__,
+    description=nosewatch.__doc__.strip(),
     url='https://github.com/lukaszb/nose-watch',
     packages=find_packages(),
     long_description=open('README.rst').read(),
@@ -34,4 +34,3 @@ setup(
         ]
     }
 )
-
